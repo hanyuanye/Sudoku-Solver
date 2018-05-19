@@ -2,7 +2,7 @@
 #include <iostream>
 
 int main() {
-	std::vector<std::vector<int>> v(9, std::vector<int>(9, 0));;
+	std::vector< std::vector<int> > v(9, std::vector<int>(9, 0));;
 	v[0][4] = 6;
 	v[0][8] = 5;
 	v[1][0] = 5;
@@ -33,12 +33,6 @@ int main() {
 	v[8][0] = 6;
 	v[8][4] = 1;
 	Sudoku sudoku(v);
-	std::vector<std::vector<int>> solution = sudoku.solve();
-	for (int i = 0; i < 9; i++) {
-		for (int j = 0; j < 9; j++) {
-			std::cout << solution[i][j] << " ";
-		}
-		std::cout << std::endl;
-	}
-	std::cin.get();
+	std::vector< std::vector<int> > solution = sudoku.solve();
+	sudoku.print();
 }

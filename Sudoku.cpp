@@ -3,7 +3,7 @@ using std::endl;
 using std::cout;
 
 
-Sudoku::Sudoku(std::vector<std::vector<int>> v)
+Sudoku::Sudoku(std::vector< std::vector<int> > v)
 {
 	board = v;
 }
@@ -13,7 +13,7 @@ Sudoku::~Sudoku()
 {
 }
 
-std::vector<std::vector<int>> Sudoku::solve()
+std::vector< std::vector<int> > Sudoku::solve()
 {
 	std::vector<EmptySquare> emptySquares;
 	for (int i = 0; i < 9; i++) {
@@ -43,6 +43,14 @@ std::vector<std::vector<int>> Sudoku::solve()
 	return board;
 }
 
+void Sudoku::print() {
+	for (int i = 0; i < 9; i++) {
+		for (int j = 0; j < 9; j++) {
+			std::cout << board[i][j] << " ";
+		}
+		std::cout << std::endl;
+	}	
+}
 bool Sudoku::isLegal()
 {
 	bool* isInGroup = new bool[9];
@@ -74,7 +82,7 @@ bool Sudoku::isLegal()
 	}
 	//check boxes
 	//first create box groups
-	std::vector<std::vector<int>> boxes;
+	std::vector< std::vector<int> > boxes;
 	for (int i = 0; i < 3; i++) {
 		for (int j = 0; j < 3; j++) {
 			std::vector<int> box;

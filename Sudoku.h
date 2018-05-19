@@ -12,11 +12,12 @@ struct EmptySquare {
 class Sudoku
 {
 public:
-	Sudoku(std::vector<std::vector<int>> board);
+	Sudoku(std::vector< std::vector<int> > board);
 	~Sudoku();
-	std::vector<std::vector<int>> solve();
+	std::vector< std::vector<int> > solve();
+	void print();
 	bool isLegal();
 private:
-	std::vector<std::vector<int>> board;
+	std::vector< std::vector<int> > board;
 };
 
